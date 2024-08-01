@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/")
+    fetch("https://smart-brain-api-0pym.onrender.com/")
       .then((res) => res.json())
       .then(console.log)
       .catch((e) => {
@@ -93,7 +93,7 @@ class App extends Component {
   };
 
   returnClarifaiResult = (imageUrl) => {
-    fetch("http://localhost:3000/imageUrl", {
+    fetch("https://smart-brain-api-0pym.onrender.com/imageUrl", {
       method: "post",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ imageUrl }),
@@ -102,7 +102,7 @@ class App extends Component {
       .then((result) => {
         console.log(result);
         if (result.status.code === 10000) {
-          fetch("http://localhost:3000/image", {
+          fetch("https://smart-brain-api-0pym.onrender.com/image", {
             method: "put",
             headers: {
               "Content-Type": "application/json",
